@@ -153,8 +153,8 @@ text-align: left;
 #game-box {
   background-color: rgb(255, 255, 255);
   padding: 20px;
-  margin-left: 250px;
-  margin-right: 250px;
+  margin-left: 150px;
+  margin-right: 150px;
   border-style: double;
   border-width: 5px;
   border-color: red;
@@ -296,4 +296,5 @@ video {
 .door {
   flex: 33.33%;
   padding: 5px;
+
 }
