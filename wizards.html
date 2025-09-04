@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wizards</title>
+    <link href="style.css" rel="stylesheet" >
+    <link href='https://fonts.googleapis.com/css?family=Akronim' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Amarante' rel='stylesheet'>
+</head>
+<body>
+
+    <div class="home">
+        <a href="./index.html">
+            <button>Home</button>
+        </a>
+    </div>
+
+    <div class="title">
+        <h2>Wizard Gallery</h2>
+    </div>
+	
+	<div class="container">
+	
+	<div class="introduction">
+		<p>Here's an assortment of 8 wizards. Click the arrows to rotate the wizards and click each wizard to see his powers.</p>
+	</div>
+
+    <div class="gallery">
+	
+	<!-- &#9733 is black star
+	&#9734 is white star -->
+    
+        <div class="wizard">
+		<img id="baldbert" src="./pics/wizards/baldbert1.jpeg">
+		<div class="rotate-wizard">
+				<button class="rotate-button" id="rotate-left-baldbert" onclick ="rotate_baldbert_left()">&#9756</button>
+				<button class="rotate-button" id="rotate-right-baldbert" onclick="rotate_baldbert_right()">&#9758</button>
+		</div>
+			<h3 style="text-align:center;">Baldbert the Bespectacled</h3>
+		<div id="baldbert-modal" class = "modal">
+			<div class="wizard-modal-content">
+				<span class="close">&times;</span>
+					<h3>Baldbert the Bespectacled Stats</h4>
+					<p><b>Potion Strength:</b> &#9733 &#9734 &#9734 &#9734 &#9734</br>
+					<b>Speed:</b> &#9733 &#9734 &#9734 &#9734 &#9734</br>
+					<b>Teleportation:</b> &#9733 &#9733 &#9733 &#9733 &#9733</br>
+					<b>Spells:</b> &#9733 &#9733 &#9733 &#9733 &#9733</br>
+					<b>Charisma:</b> &#9733 &#9733 &#9734 &#9734 &#9734</br>
+					<b>Wish Granting:</b> &#9733 &#9733 &#9733 &#9734 &#9734</br>
+					<b>Special Power:</b> Good at Math</br></p>
+			</div>
+		</div>
+		</div>
+		
+		<div class="wizard">
+			<img id="carl" src="./pics/wizards/carl1.jpeg">
+			<div class="rotate-wizard">
+				<button class="rotate-button" id="rotate-left-carl" onclick="rotate_carl_left()">&#9756</button>
+				<button class="rotate-button" id="rotate-right-carl" onclick="rotate_carl_right()">&#9758</button>
+			</div>
+			<h3 style="text-align:center;">Carl the Considerate</h3>
+			<div id="carl-modal" class = "modal">
+				<div class="wizard-modal-content">
+					<span class="close">&times;</span>
+					<h3>Carl the Considerate Stats</h4>
+					<p><b>Potion Strength:</b> &#9733 &#9733 &#9734 &#9734 &#9734</br>
+					<b>Speed:</b> &#9733 &#9733 &#9734 &#9734 &#9734</br>
+					<b>Teleportation:</b> &#9733 &#9733 &#9733 &#9734 &#9734</br>
+					<b>Spells:</b> &#9733 &#9733 &#9734 &#9734 &#9734</br>
+					<b>Charisma:</b> &#9733 &#9733 &#9733 &#9733 &#9733</br>
+					<b>Wish Granting:</b> &#9733 &#9733 &#9733 &#9734 &#9734</br>
+					<b>Special Power:</b> Really Good on First Dates</br></p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="wizard">
+			<img id="frotgar" src="./pics/wizards/frotgar1.jpeg">
+			<div class="rotate-wizard">
+				<button class="rotate-button" id="rotate-left-frotgar" onclick="rotate_frotgar_left()">&#9756</button>
+				<button class="rotate-button" id="rotate-right-frotgar" onclick="rotate_frotgar_right()">&#9758</button>
+			</div>
+			<h3 style="text-align:center;">Frotgar the Floricultural</h3>
+			<div id="frotgar-modal" class = "modal">
+				<div class="wizard-modal-content">
+					<span class="close">&times;</span>
+					<h3>Frotgar the Floricultural Stats</h4>
+					<p><b>Potion Strength:</b> &#9733 &#9733 &#9733 &#9733 &#9733</br>
+					<b>Speed:</b> &#9733 &#9733 &#9733 &#9734 &#9734</br>
+					<b>Teleportation:</b> &#9733 &#9734 &#9734 &#9734 &#9734</br>
+					<b>Spells:</b> &#9733 &#9733 &#9733 &#9733 &#9734</br>
+					<b>Charisma:</b> &#9733 &#9733 &#9734 &#9734 &#9734</br>
+					<b>Wish Granting:</b> &#9733 &#9733 &#9734 &#9734 &#9734</br>
+					<b>Special Power:</b> Gardening</br></p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="wizard">
+			<img id="moneybags" src="./pics/wizards/moneybags1.jpeg">
+			<div class="rotate-wizard">
+				<button class="rotate-button" id="rotate-left-moneybags" onclick="rotate_moneybags_left()">&#9756</button>
+				<button class="rotate-button" id="rotate-right-moneybags" onclick="rotate_moneybags_right()">&#9758</button>
+			</div>
+			<h3 style="text-align:center;">Mr. Moneybags</h3>
+			<div id="moneybags-modal" class = "modal">
+				<div class="wizard-modal-content">
+					<span class="close">&times;</span>
+					<h3>Mr. Moneybags Stats</h4>
+					<p><b>Potion Strength:</b> &#9733 &#9734 &#9734 &#9734 &#9734</br>
+					<b>Speed:</b> &#9733 &#9734 &#9734 &#9734 &#9734</br>
+					<b>Teleportation:</b> &#9733 &#9734 &#9734 &#9734 &#9734</br>
+					<b>Spells:</b> &#9733 &#9734 &#9734 &#9734 &#9734</br>
+					<b>Charisma:</b> &#9733 &#9733 &#9733 &#9733 &#9733</br>
+					<b>Wish Granting:</b> &#9733 &#9733 &#9733 &#9733 &#9734</br>
+					<b>Special Power:</b> Unlimited Money</br></p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="wizard">
+			<img id="ogbert" src="./pics/wizards/ogbert1.jpeg">
+			<h3 style="text-align:center;">Ogbert the Orange</h3>
+			<div class="rotate-wizard">
+				<button class="rotate-button" id="rotate-left-ogbert" onclick="rotate_ogbert_left()">&#9756</button>
+				<button class="rotate-button" id="rotate-right-ogbert" onclick="rotate_ogbert_right()">&#9758</button>
+			</div>
+			<div id="ogbert-modal" class = "modal">
+				<div class="wizard-modal-content">
+					<span class="close">&times;</span>
+					<h3>Ogbert the Orange Stats</h4>
+					<p><b>Potion Strength:</b> &#9733 &#9733 &#9733 &#9733 &#9734</br>
+					<b>Speed:</b> &#9733 &#9733 &#9734 &#9734 &#9734</br>
+					<b>Teleportation:</b> &#9733 &#9733 &#9733 &#9733 &#9733</br>
+					<b>Spells:</b> &#9733 &#9733 &#9733 &#9733 &#9733</br>
+					<b>Charisma:</b> &#9733 &#9733 &#9733 &#9734 &#9734</br>
+					<b>Wish Granting:</b> &#9733 &#9734 &#9734 &#9734 &#9734</br>
+					<b>Special Power:</b> Understands Colour Wheel</br></p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="wizard">
+			<img id= "prospero" src="./pics/wizards/prospero1.jpeg">
+			<div class="rotate-wizard">
+				<button class="rotate-button" id="rotate-left-prospero" onclick="rotate_prospero_left()">&#9756</button>
+				<button class="rotate-button" id="rotate-right-prospero" onclick="rotate_prospero_right()">&#9758</button>
+			</div>
+			<h3 style="text-align:center;">Prospero the Perspicacious</h3>
+			<div id="prospero-modal" class = "modal">
+				<div class="wizard-modal-content">
+					<span class="close">&times;</span>
+					<h3>Prospero the Perspicacious Stats</h4>
+					<p><b>Potion Strength:</b> &#9733 &#9733 &#9733 &#9733 &#9734</br>
+					<b>Speed:</b> &#9733 &#9733 &#9734 &#9734 &#9734</br>
+					<b>Teleportation:</b> &#9733 &#9733 &#9733 &#9733 &#9734</br>
+					<b>Spells:</b> &#9733 &#9733 &#9733 &#9733 &#9733</br>
+					<b>Charisma:</b> &#9733 &#9734 &#9734 &#9734 &#9734</br>
+					<b>Wish Granting:</b> &#9733 &#9733 &#9733 &#9734 &#9734</br>
+					<b>Special Power:</b> Has a PhD in every subject</br></p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="wizard">
+			<img id= "valentine" src="./pics/wizards/valentine1.jpeg">
+			<div class="rotate-wizard">
+				<button class="rotate-button" id="rotate-left-valentine" onclick = "rotate_valentine_left()">&#9756</button>
+				<button class="rotate-button" id="rotate-right-valentine" onclick = "rotate_valentine_right()">&#9758</button>
+			</div>
+			<h3 style="text-align:center;">Valentine the Vegetarian</h3>
+			<div id="valentine-modal" class = "modal">
+				<div class= "wizard-modal-content">
+					<span class="close">&times;</span>
+					<h3>Valentine the Vegetarian Stats</h4>
+					<p><b>Potion Strength:</b> &#9733 &#9733 &#9734 &#9734 &#9734</br>
+					<b>Speed:</b> &#9733 &#9733 &#9733 &#9733 &#9733</br>
+					<b>Teleportation:</b> &#9733 &#9733 &#9733 &#9733 &#9734</br>
+					<b>Spells:</b> &#9733 &#9733 &#9733 &#9733 &#9734</br>
+					<b>Charisma:</b> &#9733 &#9733 &#9734 &#9734 &#9734</br>
+					<b>Wish Granting:</b> &#9733 &#9733 &#9733 &#9734 &#9734</br>
+					<b>Special Power:</b> Astral Projection</br></p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="wizard">
+			<img id= "wigbald" src="./pics/wizards/wigbald1.jpeg">
+			<div class="rotate-wizard">
+				<button class="rotate-button" id="rotate-left-wigbald" onclick = "rotate_wigbald_left()">&#9756</button>
+				<button class="rotate-button" id="rotate-right-wigbald" onclick = "rotate_wigbald_right()">&#9758</button>
+			</div>
+			<h3 style="text-align:center;">Wigbald the Wishful</h3>
+			<div id="wigbald-modal" class = "modal">
+				<div class="wizard-modal-content">
+					<span class="close">&times;</span>
+					<h3>Wigbald the Wishful Stats</h4>
+					<p><b>Potion Strength:</b> &#9733 &#9733 &#9733 &#9733 &#9734</br>
+					<b>Speed:</b> &#9733 &#9734 &#9734 &#9734 &#9734</br>
+					<b>Teleportation:</b> &#9733 &#9733 &#9733 &#9734 &#9734</br>
+					<b>Spells:</b> &#9733 &#9733 &#9733 &#9734 &#9734</br>
+					<b>Charisma:</b> &#9733 &#9733 &#9733 &#9733 &#9734</br>
+					<b>Wish Granting:</b> &#9733 &#9733 &#9733 &#9733 &#9733</br>
+					<b>Special Power:</b> Kindness</br></p>
+				</div>
+			</div>
+		</div>
+
+    </div>
+	</div>
+	
+	<script src="script2.js"></script>
+	<script src="wizards.js"></script>
+
+</body>
+</html>

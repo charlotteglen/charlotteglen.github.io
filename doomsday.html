@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doomsday Algorithm</title>
+    <link href="style.css" rel="stylesheet" >
+	<link href='https://fonts.googleapis.com/css?family=Akronim' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Amarante' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div class="home">
+        <a href="./index.html">
+            <button class="button">Home</button>
+        </a>
+    </div>
+    
+    <div class="title">
+        <h2>The Doomsday Algorithm Game</h2>
+    </div>
+    
+
+    <div id="game-box">
+	
+	<div id= "start-menu">
+
+        <div id="buttons">
+
+        <p><button class="button" id="rules-button">Click to see how to play</button>
+            <div id="rules-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p style="text-align:left">You will be given a randomly generated date. You must choose what day of the week that date lied on.</p>
+					<p style="text-align:left">
+					Every year has specific days that will always lie on the same day of the week as each other.</br>
+					To easily calculate the day of the week for any given day, the most important thing is to know what this specific day of the week is for the year you've been given a date for.</br>
+					Say this day of the week (dubbed the "Doomsday" by mathematician John Conway) is Monday. That means that, for example, April 4th and June 6th were both Mondays.</br>
+					Now that you know what day of the week April 4th was and want to know what day of the week April 19 was, just go 15 days ahead (which is equivalent to 1 day ahead because we can subtract multiples of 7). So, it would be Tuesday!</br>
+					</p>
+					<p style="text-align:left">
+					The hardest part is determining what your "doomsday" is. This is done by remembering a few key numbers.</br>
+					Each century will have its own anchor. For 1900, it's 3- Wednesday. For 2000, it's 2- Tuesday. (There are of course more, but my version of this game covers only the 1900s and 2000s. Click the link below to see how to calculate for other centuries.) </br>
+					To use this to calculate the doomsday for a specific year, some mental math is required. Take the latter half of the year you're given, and divide it by 12 (result = a, remainder = b). Note how many times 4 can go into the remainder (result = c). </br>
+					Now, add a+b+c. Add this to the century's doomsday and you will have the doomsday for any year.</br>
+					</p>
+					<p style="text-align:left">Now you just have to find the doomsday closest to the date you were given. These are easy to remember.</br>
+					January: the 3rd, except on Leap years, in which it's the 4th.</br>
+					February: the 28th, except on Leap years, in which it's the 29th.</br>
+					March: Pi Day. The 14th.</br>
+					April, June, August, October, December: remember 4/4, 6/6, 8/8, 10/10, and 12/12. </br>
+					May, July, September, November: "I work 9-5 at the 7/11." 5/9, 9/5, 7/11, and 11/7.</br>
+					Also, each day of the week has a number. Sunday is 0, Monday is 1, Tuesday is 2, etc.
+					</p>
+					<p style="text-align:left">Let's do an example: October 19, 1966. First: The 1900s anchor is 3. 66/12 is 5 (a=5), remainder 6 (b=6). 4 goes into 6 1 time (c=1). 5+6+1=12. Add the century anchor of 3 to get 15.<br>
+					Since we're dealing with days of the week which are cyclical, we subtract 14 from 15 to get 1. Now we know that our doomsday for 1966 is 1- Monday.</br>
+					Now remember the doomsday for October- remember, the tenth of the tenth. October 10, 1966 was a Monday. October 19 was 9 days ahead of the 10th, equivalent to 2 days of the week ahead (again, we can subtract 7).</br>
+					So, October 19th, 1966 was 2 days ahead of Monday: Wednesday!</p>
+                    <a href="https://rudy.ca/doomsday.html" target="_blank">More In Depth Instructions Here, Written by someone much more knowledgeable</a>
+                
+					<!--
+					<p style="text-align:left">Stuck? Click the ? icon in the bottom left to see the anchors.</p>  
+					a future feature...-->
+                </div>
+            </div>
+        </p>
+
+        <p>
+        <button class="button" id="start-button" onclick="beginGame()">Begin Game</button>
+        </p>
+
+    </div>
+	</div>
+
+    <div id="game">
+
+        <p id="randomDate">
+            <span id="randomMonth"></span>
+            <span id="randomDay"></span>
+            <span id="randomYear"></span>
+        </p>
+
+        <div id="selection">
+
+        <p>Choose the day of the week:</p>
+        
+        <form id="day-choice">
+
+        <input type="radio" id="sunday" name="day_of_week" value="Sunday">
+            <label for="sunday">Sunday</label><br>
+        <input type="radio" id="monday" name="day_of_week" value="Monday">
+            <label for="monday">Monday</label><br>
+        <input type="radio" id="tuesday" name="day_of_week" value="Tuesday">
+            <label for="tuesday">Tuesday</label></br>
+        <input type="radio" id="wednesday" name="day_of_week" value="Wednesday">
+            <label for="wednesday">Wednesday</label></br>
+        <input type="radio" id="thursday" name="day_of_week" value="Thursday">
+            <label for="thursday">Thursday</label></br>
+        <input type="radio" id="friday" name="day_of_week" value="Friday">
+            <label for="friday">Friday</label></br>
+        <input type="radio" id="saturday" name="day_of_week" value="Saturday">
+            <label for="saturday">Saturday</label></br>
+        
+		<div id="submit-button">
+        <button type="button" onclick="compareAns()" style="margin-top:10px">Submit</button>
+		</div>
+
+        </form>
+        </div>
+		
+		<div id = "results">
+
+        <div id="correct">
+            <p>Correct!</p>
+            <p>You earned 1 point.</p>
+        </div>
+
+        <div id="incorrect">
+            <p>Incorrect!</p>
+			<p>You lost a life.</p>
+            <p>Your answer: <span id="ans"></span></p>
+            <p>Real answer: <span id="realans"></span></p>
+        </div>
+		
+		</div>
+
+		<div id ="new-date-button">
+        <p>
+            <button class="button" id="getdate" onclick="clearAns()">Give me another date!</button>
+        </p>
+		</div>
+
+        <div id="lives">
+            <p>Lives Left: <span id="livesleft"></span></p> 
+        <!--lives span has the hearts-->
+        </div>
+
+        <div id="points">
+            <p>Points: <span id="points_num"></span></p>
+        </div>
+
+    </div>
+	
+	<div id = "game-over">
+		<h3>GAME OVER</h3>
+		<h4>Your Score: <span id="final-score"></span></p>
+		<button class = "button" id = "restart-game" onclick="beginGame()">Play Again</button>
+		<button class = "button" id = "to-start-menu" onclick="toStartMenu()">Start Menu</button>
+	</div>
+
+    </div>
+
+    <script src="doomsday.js"></script>
+    <script src="script1.js"></script>
+
+</body>
+
+</html>

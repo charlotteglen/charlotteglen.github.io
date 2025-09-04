@@ -1,0 +1,299 @@
+
+body {
+  background-image: url('./pics/icons/background3.png');
+}
+
+p {
+  font-family:'Arial', sans-serif;
+}
+
+ol {
+  font-family:'Arial', sans-serif;
+}
+
+a {
+	font-family: 'Arial', sans-serif;
+}
+
+a:link {
+	color: blue;
+}
+a:visited {
+	color: black;
+}
+a:hover{
+	color:red;
+}
+
+.title h1 {
+  font-family: 'Akronim', 'Arial';
+  font-size: 70px;
+  text-align: center;
+}
+
+.title h2 {
+  font-family: 'Akronim', 'Arial';
+  font-size: 40px;
+  text-align: center;
+}
+
+.wizard h3, h4 {
+	font-family: 'Amarante', 'Arial';
+}
+
+.wizard p {
+	font-family: 'Amarante', 'Arial';
+}
+
+#main-menu {
+background-color: rgb(255, 255, 255);
+  padding: 20px;
+  margin-left: 200px;
+  margin-right: 200px;
+  border-style: double;
+  border-width: 5px;
+  border-color: red;
+  position:relative;
+}
+
+.grid-container { /* not trying to finish this right now */
+  justify-content: center;
+  margin-top: 100px;
+  place-items:center;
+  /* display: grid; */
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+  display: none;
+}
+
+.grid-container2 {
+  justify-content: center;
+  margin-top: 100px;
+  place-items:center;
+  display: grid;
+  grid-template-columns: 100px 100px;
+  gap: 20px;
+}
+
+#page {
+    border: 7px outset red;
+  }
+
+.pic-link img {
+    height: 125px;
+    width: 125px;
+}
+
+.text-container{
+  text-align: left;
+  background-color: white;
+  padding: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+  border: 5px double #FF0000;
+}
+
+.container {
+text-align: left;
+  background-color: white;
+  padding: 20px;
+  margin-left: 200px;
+  margin-right: 200px;
+  border: 5px double #FF0000;
+}
+
+#buttons{
+  text-align: center;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+  
+  /* Modal Content/Box */
+.modal-content {
+  background-color: #ffffff;
+  margin: 1.5% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 2px double #000000;
+  width: 70%; /* Could be more or less, depending on screen size */
+}
+
+.wizard-modal-content {
+	background-color: #ffffff;
+  margin: 10% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 2px double #000000;
+  width: 25%; /* Could be more or less, depending on screen size */
+}
+  
+  /* The Close Button */
+.close {
+  color: #ff0000;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+  
+.close:hover, .close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#game-box {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  margin-left: 250px;
+  margin-right: 250px;
+  border-style: double;
+  border-width: 5px;
+  border-color: red;
+  position:relative;
+}
+
+#start-menu {
+	text-align:center;
+	justify-content:center;
+}
+
+#rules {
+	display:none;
+}
+
+#rules-text {
+	display: none;
+}
+
+#game {
+  display:none;
+}
+
+#randomDate {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#getdate {
+  display: none;
+}
+
+#correct {
+  display: none;
+}
+
+#incorrect {
+  display: none;
+}
+
+#lives {
+  position:absolute;
+  top: 0;
+  right: 10px;
+}
+
+#points {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+
+#game-over {
+	display: none;
+	text-align: center;
+	justify-content: center;
+}
+
+
+
+/* wizard & embroidery gallery css */
+
+.gallery {
+  margin-left: 100px;
+  margin-right:100px;
+  padding:20px;
+  display: grid;
+  grid-gap: 100px;
+  grid-template-columns: 400px 400px;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 300px;
+  height:300px;
+  border: 5px solid red;
+}
+
+.rotate-wizard {
+	text-align:center;
+	justify-content:center;
+}
+
+.rotate-button {
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+}
+
+/* tv css */
+
+#videoplayer {
+  justify-content: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+video {
+  border: 10px solid rgb(74, 40, 40);
+  width: 912px;
+  height: 513px;
+}
+
+#video1 {
+	display:block;
+}
+
+#video2 {
+	display:none;
+}
+
+.control-button {
+	border-radius: 50%;
+	background-color: green;
+	color: white;
+	padding: 10px;
+	text-align: center;
+	display: inline-block;
+	font-size: 25px;
+	cursor: pointer;
+}
+
+#sim-container {
+  text-align:center;
+  width:1000px;
+  border: 5px double rgb(66, 27, 66);
+  padding: 20px;
+  background: white;
+}
+
+#door-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.door {
+  flex: 33.33%;
+  padding: 5px;
+}
