@@ -1,26 +1,58 @@
 var points;
 var lives;
+var easyMode=false;
+var regularMode=false;
+var hardMode=false;
+
+function turnOnEasyMode(){
+	easyMode=true;
+	beginGame();
+}
+
+function turnOnRegularMode(){
+	regularMode=true;
+	beginGame();
+}
+
+function turnOnHardMode(){
+	hardMode=true;
+	beginGame();
+}
 
 function beginGame(){
+	
+	clearAns();
 
+    getDate();
+	
+	document.getElementById("game").style.display = "block";
+
+	if(regularMode || hardMode){
 	points = 0;
 	lives = 3;
 	
 	updateLives(lives);
 	document.getElementById("points_num").innerHTML = points;
+	document.getElementById("hint-button").style.display = "none";
+	document.getElementById("lives").style.display = "block";
 	
-	clearAns();
+	} else if (easyMode){
+		points = 0;
+		document.getElementById("exit_practice_mode").style.display = "block";
+		document.getElementById("hint-button").style.display = "block";
+		document.getElementById("points_num").innerHTML = points;
+		document.getElementById("lives").style.display = "none";
+		document.getElementById("regular-incorrect").style.display = "none";
+	}
 	
 	document.getElementById("start-menu").style.display = "none";
     document.getElementById("rules-button").style.display = "none";
     document.getElementById("start-button").style.display = "none";
 	document.getElementById("game-over").style.display = "none";
-
-    document.getElementById("game").style.display = "block";
-
-    getDate();
+	document.getElementById("options-menu").style.display = "none";
 
 }
+
 
 function getRandomIntInclusive(min, max) {
     const minCeiled = Math.ceil(min);
@@ -134,18 +166,16 @@ function compareAns() {
             userAns=ansList[i].value;
     }
 
-    console.log("console log check");
 
     if(userAns == correctDayOfWeek){
-
-        points++;
+		points++;
+		document.getElementById("points_num").innerHTML = points;
         document.getElementById("incorrect").style.display = "none";
         document.getElementById("correct").style.display = "block";
 
 
     } else if (userAns != correctDayOfWeek){
-
-        lives--;
+		if(hardMode || regularMode){ lives--; }
         document.getElementById("ans").innerHTML = userAns;
         document.getElementById("realans").innerHTML = correctDayOfWeek;
         document.getElementById("incorrect").style.display = "block";
@@ -153,6 +183,7 @@ function compareAns() {
     
     }
 
+	if(hardMode || regularMode) {
     updateLives(lives);
 
     if(lives > 0){
@@ -163,7 +194,11 @@ function compareAns() {
 		document.getElementById("new-date-button").style.display="none";
 	}
 
-    document.getElementById("points_num").innerHTML = points;
+    
+	} else if (easyMode){
+		document.getElementById("getdate").style.display="block";
+		document.getElementById("new-date-button").style.display="block";
+	}
 	
 	document.getElementById("submit-button").style.display = "none";
 	//document.getElementById("new-date-button").style.display = "block";
@@ -180,7 +215,7 @@ if (lives == 3){
         document.getElementById("livesleft").innerHTML = "<3";
     } else if (lives == 0){
         document.getElementById("livesleft").innerHTML = "NO LIVES LEFT :(";
-        setTimeout('gameOver()',5000);
+        setTimeout('gameOver()',4000);
     } else {
         document.getElementById("livesleft").innerHTML = "ERROR";
     }
@@ -206,16 +241,22 @@ function gameOver(){
 function toStartMenu(){
 	document.getElementById("start-menu").style.display = "block";
 	document.getElementById("game-over").style.display = "none";
-	document.getElementById("rules-button").style.display = "block";
+	document.getElementById("rules-button").style.display = "inline-block";
 	document.getElementById("start-button").style.display = "block";
 }
 
-function showInstructions(){
-
+function hintsOff(){
+	document.getElementById("hint-button").style.display = "none";
 }
 
-function hideInstructions(){
+function hintsOn() {
+	document.getElementById("hint-button").style.display = "block";
+}
 
+function exitPracticeMode(){
+	document.getElementById("game").style.display = "none";
+	document.getElementById("exit_practice_mode").style.display="none";
+	toStartMenu();
 }
     
 document.addEventListener("DOMContentLoaded", () => {
