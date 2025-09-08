@@ -6,41 +6,46 @@ var hardMode=false;
 
 function turnOnEasyMode(){
 	easyMode=true;
+	regularMode=false;
+	hardMode=false;
 	beginGame();
 }
 
 function turnOnRegularMode(){
 	regularMode=true;
+	easyMode=false;
+	hardMode=false;
 	beginGame();
 }
 
 function turnOnHardMode(){
 	hardMode=true;
+	easyMode=false;
+	regularMode=false;
 	beginGame();
 }
 
 function beginGame(){
 	
-	clearAns();
-
-    getDate();
-	
-	document.getElementById("game").style.display = "block";
-
-	if(regularMode || hardMode){
 	points = 0;
 	lives = 3;
 	
+	clearAns();
+    getDate();
+	
+	document.getElementById("game-over").style.display = "none";
+	document.getElementById("game").style.display = "block";
+	
 	updateLives(lives);
 	document.getElementById("points_num").innerHTML = points;
+	
+	if(regularMode || hardMode){
 	document.getElementById("hint-button").style.display = "none";
 	document.getElementById("lives").style.display = "block";
 	
 	} else if (easyMode){
-		points = 0;
 		document.getElementById("exit_practice_mode").style.display = "block";
 		document.getElementById("hint-button").style.display = "block";
-		document.getElementById("points_num").innerHTML = points;
 		document.getElementById("lives").style.display = "none";
 		document.getElementById("regular-incorrect").style.display = "none";
 	}
@@ -48,7 +53,6 @@ function beginGame(){
 	document.getElementById("start-menu").style.display = "none";
     document.getElementById("rules-button").style.display = "none";
     document.getElementById("start-button").style.display = "none";
-	document.getElementById("game-over").style.display = "none";
 	document.getElementById("options-menu").style.display = "none";
 
 }
