@@ -16,11 +16,9 @@ a {
 }
 
 a:link {
-	color: blue;
-}
-a:visited {
 	color: black;
 }
+
 a:hover{
 	color:red;
 }
@@ -195,6 +193,18 @@ text-align: left;
   display: none;
 }
 
+#exit_practice_mode {
+	display: none;
+	background-color:red;
+	color:white;
+	padding:5px;
+	font-size:14px;
+	cursor:pointer;
+	position:absolute;
+	top:0;
+	right: 10px;
+}
+
 #lives {
   position:absolute;
   top: 0;
@@ -213,6 +223,20 @@ text-align: left;
 	justify-content: center;
 }
 
+#hint-button {
+	display: none;
+	border-radius: 50%;
+	background-color: green;
+	color: white;
+	padding: 10px;
+	text-align: center;
+	display: inline-block;
+	font-size: 20px;
+	cursor: pointer;
+	position: absolute;
+	bottom: 20px;
+	right: 10px;
+}
 
 
 /* wizard & embroidery gallery css */
@@ -228,7 +252,8 @@ text-align: left;
 }
 
 .gallery img {
-  max-width: 100%;
+  max-width:100%;
+  height:auto;
   border: 5px solid red;
 }
 
@@ -269,7 +294,7 @@ video {
 
 .control-button {
 	border-radius: 50%;
-	background-color: green;
+	background-color: #CBFAAB;
 	color: white;
 	padding: 10px;
 	text-align: center;
@@ -295,7 +320,4 @@ video {
 .door {
   flex: 33.33%;
   padding: 5px;
-
 }
-
-
