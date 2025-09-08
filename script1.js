@@ -1,17 +1,26 @@
 
 
 var rules_modal = document.getElementById("rules-modal");
+var hint_modal = document.getElementById("hint-modal");
 
 var rules_button = document.getElementById("rules-button");
+var hint_button = document.getElementById("hint-button");
 
-var span = document.getElementsByClassName("close")[0];
+var spans = document.getElementsByClassName("close");
 
 rules_button.onclick = function() {
 	rules_modal.style.display = "block";
 }
 
-span.onclick = function() {
-	rules_modal.style.display = "none";
+hint_button.onclick = function() {
+	hint_modal.style.display = "block";
+}
+
+for(var i=0; i < spans.length; i++){
+	spans[i].onclick = function() {
+		rules_modal.style.display = "none";
+		hint_modal.style.display = "none";
+	}
 }
 
 window.onclick = function(event) {
